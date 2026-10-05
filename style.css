@@ -1,0 +1,53 @@
+/* ハミガ記 / BrushMark — ウェブページ。アプリと同じ決まり：紙の地、墨、ひとつの色、明朝は見出しだけ */
+:root {
+  --paper: #f6f5f1;
+  --ink: #202228;
+  --ink2: rgba(32, 34, 40, 0.62);
+  --ink3: rgba(32, 34, 40, 0.42);
+  --rule: rgba(32, 34, 40, 0.13);
+  --accent: #165e83;
+  --mincho: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  --serif-en: "New York", ui-serif, Georgia, serif;
+  --gothic: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+}
+/* アプリと同じく、いつも紙（暗い表示にはしない） */
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--gothic); font-size: 16px; line-height: 1.8; letter-spacing: 0.04em;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+header.top { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+header.top .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-size: 15px; }
+header.top .brand img { width: 28px; height: 28px; border-radius: 7px; }
+header.top nav a { color: var(--ink2); text-decoration: none; font-size: 13px; margin-left: 18px; }
+
+.hero { text-align: center; padding: 56px 0 24px; }
+.hero img.icon { width: 112px; height: 112px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.hero h1 { font-family: var(--mincho); font-weight: 600; font-size: clamp(30px, 6vw, 46px); line-height: 1.4; letter-spacing: 0.06em; margin: 28px 0 10px; text-wrap: balance; }
+html[lang="en"] .hero h1 { font-family: var(--serif-en); letter-spacing: 0; }
+.hero p.lead { color: var(--ink2); margin: 0 auto; max-width: 34em; text-wrap: balance; word-break: keep-all; overflow-wrap: anywhere; }
+.badge { display: inline-block; margin-top: 28px; padding: 12px 26px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 15px; }
+.badge.soon { background: transparent; color: var(--ink2); border: 1px solid var(--rule); }
+
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 40px 0 24px; }
+.shots img { width: 100%; height: auto; border-radius: 18px; display: block; }
+@media (max-width: 640px) { .shots { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+
+.points { list-style: none; padding: 0; margin: 24px auto 56px; max-width: 36em; }
+.points li { padding: 14px 0; border-top: 1px solid var(--rule); }
+.points li:last-child { border-bottom: 1px solid var(--rule); }
+
+article.doc { max-width: 40em; margin: 0 auto; padding: 32px 0 72px; }
+article.doc h1 { font-family: var(--mincho); font-weight: 600; font-size: 30px; letter-spacing: 0.06em; margin: 16px 0 8px; }
+html[lang="en"] article.doc h1 { font-family: var(--serif-en); letter-spacing: 0; }
+article.doc h2 { font-size: 17px; margin: 36px 0 6px; }
+article.doc .meta { color: var(--ink3); font-size: 13px; }
+article.doc dl dt { font-weight: 600; margin-top: 18px; }
+article.doc dl dd { margin: 4px 0 0; color: var(--ink2); }
+
+footer { border-top: 1px solid var(--rule); padding: 24px 0 40px; color: var(--ink3); font-size: 13px; }
+footer a { color: var(--ink3); margin-right: 18px; }
