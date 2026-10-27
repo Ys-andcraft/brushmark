@@ -49,6 +49,9 @@ html[lang="en"] .hero h1 { font-family: var(--serif-en); letter-spacing: 0; line
 /* App Store へ */
 .badge { display: inline-block; margin-top: 32px; padding: 12px 28px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 15px; line-height: 1.6; }
 .badge.soon { background: transparent; color: var(--ink2); border: 1px solid var(--rule); }
+/* Apple 公式のバッジ（高さ 48px。まわりに高さの 1/4 以上の余白） */
+.store { display: inline-block; margin-top: 32px; }
+.store img { height: 48px; width: auto; margin: 0 auto; }
 
 /* できること：画面と言葉を左右に。1段ごとに左右を入れかえ、まんなかの溝はいつも同じ幅 */
 .features { display: grid; gap: 128px; }
@@ -79,7 +82,7 @@ html[lang="en"] .spec h2 { font-family: var(--serif-en); letter-spacing: 0; }
 .spec dl div { display: grid; grid-template-columns: 8em 1fr; column-gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
 .spec dt { color: var(--ink3); font-size: 14px; line-height: 1.8; padding-top: 1px; }
 .spec dd { margin: 0; }
-.spec .badge { margin-top: 48px; }
+.spec .badge, .spec .store { margin-top: 48px; }
 @media (max-width: 760px) { .spec { padding: 96px 0; } .spec dl div { grid-template-columns: 1fr; } }
 
 /* 文書（プライバシーポリシー・サポート） */
